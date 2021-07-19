@@ -12,9 +12,9 @@ Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo
 //* --------------------------------SVOLGIMENTO TRACCIA---------------------------------------
 
 // recupero elementi html
-var studentsName = document.getElementById('nome');
-var studentsSurname = document.getElementById('cognome');
-var studentsAge = document.getElementById('eta');
+var namesList = document.getElementById('students-name');
+var surnameList = document.getElementById('students-surname');
+var agesList = document.getElementById('students-age');
 // Creazione array di studenti 
 
 var students = [
@@ -63,3 +63,30 @@ var newStudent = {
 
 // Inserimento nuovo utente nella lista di quelli gia esistenti
 students.push(newStudent);
+
+// ciclo per stampare tutti gli elementi
+var textName = '';
+var textSurname = '';
+
+for (var i = 0; i < students.length; i++) {
+    var currentStudent = students[i];
+
+    // stampare il nome
+    textName += '<li>' + currentStudent.nome + '</li>';
+
+    // stampare il cognome
+    textSurname += '<li>' + currentStudent.cognome + '</li>';
+}
+
+namesList.innerHTML = textName;
+surnameList.innerHTML = textSurname;
+
+
+
+
+
+
+
+
+
+
