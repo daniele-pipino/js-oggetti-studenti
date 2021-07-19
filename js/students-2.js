@@ -34,15 +34,24 @@ var students = [
 
 ]
 
+
 // Creazione dei prompt
 
+// nome studente
 var studentName = prompt('Inserisci il nome del nuovo studente');
-//todo Validazione da fare
+while (!studentName || studentName.trim == '' || !isNaN(studentName)) {
+    studentName = prompt('Inserisci il nome del nuovo studente');
+}
+// cognome studente
 var studentSurname = prompt('Inserisci il cognome del nuovo studente');
-//todo Validazione da fare
+while (!studentSurname || studentSurname.trim == '' || !isNaN(studentSurname)) {
+    studentSurname = prompt('Inserisci il cognome del nuovo studente');
+}
+// età studente
 var studentAge = parseInt(prompt("Inserisci l'eta del nuovo studente"));
-//todo Validazione da fare
-
+while (!studentAge || isNaN(studentAge)) {
+    var studentAge = parseInt(prompt("Inserisci l'eta del nuovo studente"));
+}
 // Dati nuovo studente
 var newStudent = {
 
