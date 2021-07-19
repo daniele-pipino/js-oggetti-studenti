@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgb(185, 122, 45);
+}
+
+.d-flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+img{
+    width: 130%;
+    border-radius: 50%;
+}
+
+.img-profile{
+    width: 200px;
+    height: 200px;
+    margin: 50px auto;
+}
+
+.t-center{
+    text-align: center;
+}
+
+.info-box{
+    height: 50px;
+    border: 0.5px solid black;
+}
+
+
+
