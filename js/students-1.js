@@ -3,6 +3,7 @@ Creare un oggetto che descriva uno studente, con le seguenti proprietà: nome, c
 Stampare a schermo (in pagina) attraverso un ciclo for-in tutte le proprietà dell'oggetto. */
 
 //* recupero elementi html
+var studentsInfo = document.getElementById('students-info');
 var studentsName = document.getElementById('nome');
 var studentsSurname = document.getElementById('cognome');
 var studentsAge = document.getElementById('eta');
@@ -15,9 +16,9 @@ var students = {
 };
 
 //* Creazione del ciclo che permette di stampare le proprietà dell'oggetto
-
+var text = '';
 for (var key in students) {
-    studentsName.innerText = students.name;
-    studentsSurname.innerText = students.surname;
-    studentsAge.innerText = students.age;
+    text += key + ' ' + students[key] + ' ';
 }
+
+studentsInfo.innerText = text;
