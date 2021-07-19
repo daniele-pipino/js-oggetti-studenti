@@ -15,8 +15,11 @@ Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo
 var namesList = document.getElementById('students-name');
 var surnameList = document.getElementById('students-surname');
 var agesList = document.getElementById('students-age');
-// Creazione array di studenti 
+// bottone
+var newStudentsButton = document.getElementById('new-students-button');
 
+
+// Creazione array di studenti 
 var students = [
     // vari studenti
     {
@@ -31,39 +34,10 @@ var students = [
         nome: 'Massimo',
         cognome: 'Saracino'
     }
-
 ]
 
 
-// Creazione dei prompt
-
-// nome studente
-var studentName = prompt('Inserisci il nome del nuovo studente');
-while (!studentName || studentName.trim == '' || !isNaN(studentName)) {
-    studentName = prompt('Inserisci il nome del nuovo studente');
-}
-// cognome studente
-var studentSurname = prompt('Inserisci il cognome del nuovo studente');
-while (!studentSurname || studentSurname.trim == '' || !isNaN(studentSurname)) {
-    studentSurname = prompt('Inserisci il cognome del nuovo studente');
-}
-// età studente
-var studentAge = parseInt(prompt("Inserisci l'eta del nuovo studente"));
-while (!studentAge || isNaN(studentAge)) {
-    var studentAge = parseInt(prompt("Inserisci l'eta del nuovo studente"));
-}
-// Dati nuovo studente
-var newStudent = {
-
-    nome: studentName,
-    cognome: studentSurname,
-    age: studentAge,
-
-}
-
-// Inserimento nuovo utente nella lista di quelli gia esistenti
-students.push(newStudent);
-
+//? Stampa dei nomi gia esistenti in pagina
 // ciclo per stampare tutti gli elementi
 var textName = '';
 var textSurname = '';
@@ -80,6 +54,67 @@ for (var i = 0; i < students.length; i++) {
 
 namesList.innerHTML = textName;
 surnameList.innerHTML = textSurname;
+
+
+
+// creazione di un bottone per aggiungere un nuovo studente alla lista
+newStudentsButton.addEventListener('click', function () {
+    // Creazione dei prompt
+
+    // nome studente
+    var studentName = prompt('Inserisci il nome del nuovo studente');
+    while (!studentName || studentName.trim == '' || !isNaN(studentName)) {
+        studentName = prompt('Inserisci il nome del nuovo studente');
+    }
+    // cognome studente
+    var studentSurname = prompt('Inserisci il cognome del nuovo studente');
+    while (!studentSurname || studentSurname.trim == '' || !isNaN(studentSurname)) {
+        studentSurname = prompt('Inserisci il cognome del nuovo studente');
+    }
+    // età studente
+    var studentAge = parseInt(prompt("Inserisci l'eta del nuovo studente"));
+    while (!studentAge || isNaN(studentAge)) {
+        var studentAge = parseInt(prompt("Inserisci l'eta del nuovo studente"));
+    }
+
+    // Dati nuovo studente
+    var newStudent = {
+
+        nome: studentName,
+        cognome: studentSurname,
+        age: studentAge,
+
+    }
+
+
+    // Inserimento nuovo utente nella lista di quelli gia esistenti
+    students.push(newStudent);
+
+    // ciclo per stampare tutti gli elementi
+    var textName = '';
+    var textSurname = '';
+
+    for (var i = 0; i < students.length; i++) {
+        var currentStudent = students[i];
+
+        // stampare il nome
+        textName += '<li>' + currentStudent.nome + '</li>';
+
+        // stampare il cognome
+        textSurname += '<li>' + currentStudent.cognome + '</li>';
+    }
+
+    namesList.innerHTML = textName;
+    surnameList.innerHTML = textSurname;
+});
+
+
+
+
+
+
+
+
 
 
 
