@@ -10,3 +10,9 @@ var students = {
     surname: 'Pipino',
     age: 21,
 };
+
+//* Creazione del ciclo che permette di stampare le proprietà dell'oggetto
+
+for (var key in students) {
+    console.log(key, students[key]);
+}
