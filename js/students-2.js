@@ -24,15 +24,18 @@ var students = [
     // vari studenti
     {
         nome: 'Gianni',
-        cognome: 'Palaggiano'
+        cognome: 'Palaggiano',
+        age: 12,
     },
     {
         nome: 'Daniele',
         cognome: 'Pipino',
+        age: 15,
     },
     {
         nome: 'Massimo',
-        cognome: 'Saracino'
+        cognome: 'Saracino',
+        age: 18,
     }
 ]
 
@@ -41,6 +44,8 @@ var students = [
 // ciclo per stampare tutti gli elementi
 var textName = '';
 var textSurname = '';
+var textAge = '';
+
 
 for (var i = 0; i < students.length; i++) {
     var currentStudent = students[i];
@@ -50,10 +55,15 @@ for (var i = 0; i < students.length; i++) {
 
     // stampare il cognome
     textSurname += '<li>' + currentStudent.cognome + '</li>';
+
+    // stampare l'età
+    textAge += '<li>' + currentStudent.age + '</li>';
 }
 
 namesList.innerHTML = textName;
 surnameList.innerHTML = textSurname;
+agesList.innerHTML = textAge;
+
 
 
 
@@ -93,6 +103,7 @@ newStudentsButton.addEventListener('click', function () {
     // ciclo per stampare tutti gli elementi
     var textName = '';
     var textSurname = '';
+    var textAge = '';
 
     for (var i = 0; i < students.length; i++) {
         var currentStudent = students[i];
@@ -102,10 +113,14 @@ newStudentsButton.addEventListener('click', function () {
 
         // stampare il cognome
         textSurname += '<li>' + currentStudent.cognome + '</li>';
+
+        // stampare l'età
+        textAge += '<li>' + currentStudent.age + '</li>';
     }
 
     namesList.innerHTML = textName;
     surnameList.innerHTML = textSurname;
+    agesList.innerHTML = textAge;
 });
 
 
